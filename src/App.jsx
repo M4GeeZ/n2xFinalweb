@@ -1,17 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-
+import ProjectsCards from "./pages/ProjectsCards/ProjectsCards";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import HomePage from "./components/HomePage/HomePage";
-
+import About from "./pages/About/About";
+import CareersPage from "./pages/CareersPage/CareersPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
 import AIDevelopment from "./pages/AIDevelopment/AIDevelopment";
 import AIIntegrations from "./pages/AIIntegrations/AIIntegrations";
 import DigitalMarketing from "./pages/DigitalMarketing/DigitalMarketing";
 import UIDesign from "./pages/UIDesign/UI-Design";
 import WebsiteDevelopment from "./pages/WebsiteDevelopment/WebsiteDevelopment";
 import AppDevelopment from "./pages/AppDevelopment/AppDevelopment";
+import ServicesPage from "./pages/ServicesPage";
 
 function App() {
   useEffect(() => {
@@ -91,7 +94,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/projects" element={<ProjectsCards />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/contact" element={<ContactPage />} />  
         <Route path="/services/ai-development" element={<AIDevelopment />} />
         <Route path="/services/ai-integrations" element={<AIIntegrations />} />
         <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
