@@ -1,0 +1,138 @@
+/* =========================
+   SERVICES GRID SECTION
+========================= */
+
+#servicesGrid {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+.spotlight-group {
+    position: relative;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+}
+
+.spotlight-card {
+    position: relative;
+    height: 100%;
+    min-height: 285px;
+    background: #ffffff;
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.06);
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: radial-gradient(
+        circle at var(--x, 50%) var(--y, 50%),
+        rgba(59, 130, 246, 0.16),
+        transparent 38%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.spotlight-card:hover::before {
+    opacity: 1;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: 0 24px 60px rgba(37, 99, 235, 0.13);
+}
+
+.icon-square {
+    width: 74px;
+    height: 74px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s ease;
+}
+
+.spotlight-card:hover .icon-square {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
+}
+
+.spotlight-card h4 {
+    color: #1e293b;
+    transition: color 0.3s ease;
+}
+
+.spotlight-card:hover h4 {
+    color: #2563eb;
+}
+
+.spotlight-card p {
+    line-height: 1.65;
+}
+
+.spotlight-card a {
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.spotlight-card a:hover {
+    transform: translateX(6px);
+}
+
+.spotlight-card a i {
+    transition: transform 0.3s ease;
+}
+
+.spotlight-card a:hover i {
+    transform: translateX(4px);
+}
+
+/* skew background helper */
+.skew-y-3 {
+    transform: skewY(-3deg);
+    transform-origin: top right;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .spotlight-card {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-padding {
+        padding: 45px 0;
+    }
+
+    .spotlight-card {
+        min-height: auto;
+    }
+
+    .icon-square {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .section-padding {
+        padding: 35px 0;
+    }
+}

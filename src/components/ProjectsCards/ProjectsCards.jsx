@@ -1,0 +1,198 @@
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./ProjectsCards.css";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const topCards = [
+  {
+    title: "Premium Web Development",
+    desc: "Modern, scalable and high-performance websites for brands.",
+    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200",
+    hoverImg: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200",
+  },
+  {
+    title: "Mobile App Solutions",
+    desc: "Smooth and professional mobile app interfaces with premium UX.",
+    img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200",
+    hoverImg: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1200",
+  },
+];
+
+const movingCards = [
+  { title: "UI/UX Design", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=900" },
+  { title: "MERN Stack", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=900" },
+  { title: "React Native", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=900" },
+  { title: "Cloud Deployments", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900" },
+  { title: "API Development", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=900" },
+  { title: "DevOps Workflow", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900" },
+  { title: "Product Design", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900" },
+];
+
+const Cards = () => {
+  const sectionRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const orbitCards = gsap.utils.toArray(".orbit-card");
+      const finalCards = gsap.utils.toArray(".primary-set .moving-card");
+      const duplicateCards = gsap.utils.toArray(".clone-set .moving-card");
+
+      gsap.set(".orbit-wrap", {
+        autoAlpha: 1,
+        scale: 1,
+      });
+
+      gsap.set([...finalCards, ...duplicateCards], {
+        autoAlpha: 0,
+        y: 120,
+        scale: 0.85,
+      });
+
+      gsap.to(".orbit-ring", {
+        rotate: 360,
+        duration: 18,
+        repeat: -1,
+        ease: "none",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".moving-wrapper",
+          start: "top top",
+          end: "+=1800",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
+
+      movingCards.forEach((_, index) => {
+        tl.to(
+          orbitCards[index],
+          {
+            autoAlpha: 0,
+            scale: 0.2,
+            duration: 0.4,
+            ease: "power2.inOut",
+          },
+          index * 0.16
+        );
+
+        tl.to(
+          [finalCards[index], duplicateCards[index]],
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.55,
+            ease: "power3.out",
+          },
+          index * 0.16 + 0.08
+        );
+      });
+
+      tl.to(".orbit-wrap", {
+        autoAlpha: 0,
+        scale: 0.65,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section className="n2x-section" ref={sectionRef}>
+      <div className="n2x-title">
+        <span>N2X</span> Digital Experiences
+        <p>
+          Premium digital solutions crafted with modern design, clean animation,
+          and smooth user interaction.
+        </p>
+      </div>
+
+      <div className="top-cards">
+        {topCards.map((card, index) => (
+          <div className="premium-card top-card" key={index}>
+            <div className="card-inner">
+              <img className="base-img" src={card.img} alt={card.title} />
+
+              <div className="hover-image-layer">
+                <img src={card.hoverImg || card.img} alt="" />
+              </div>
+
+              <div className="card-overlay"></div>
+
+              <div className="card-content">
+                <span>0{index + 1}</span>
+                <h2>{card.title}</h2>
+                <p>{card.desc}</p>
+                <button>Explore Service ↗</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="moving-wrapper">
+        <div className="orbit-wrap">
+          <div className="orbit-ring">
+            {movingCards.map((card, index) => (
+              <div
+                className="orbit-card"
+                key={index}
+                style={{
+                  "--i": index,
+                  "--total": movingCards.length,
+                }}
+              >
+                <img src={card.img} alt={card.title} />
+                <span>{card.title}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="moving-row">
+          <div className="moving-set primary-set">
+            {movingCards.map((card, index) => (
+              <div className="premium-card moving-card" key={index}>
+                <div className="card-inner">
+                  <img className="base-img" src={card.img} alt={card.title} />
+                  <div className="card-overlay"></div>
+
+                  <div className="card-content small">
+                    <span>0{index + 3}</span>
+                    <h2>{card.title}</h2>
+                    <p>Creative, clean and conversion-focused digital solution.</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="moving-set clone-set" aria-hidden="true">
+            {movingCards.map((card, index) => (
+              <div className="premium-card moving-card" key={index}>
+                <div className="card-inner">
+                  <img className="base-img" src={card.img} alt={card.title} />
+                  <div className="card-overlay"></div>
+
+                 <div className="card-content small">
+  <h2>{card.title}</h2>
+  <p>Creative, clean and conversion-focused digital solution.</p>
+</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Cards;
