@@ -1,5 +1,5 @@
 import React from "react";
-import "./DigitalMArketing.css";
+import "./DigitalMarketing.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
