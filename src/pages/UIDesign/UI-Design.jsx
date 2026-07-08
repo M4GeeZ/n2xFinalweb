@@ -2,32 +2,69 @@ import React from "react";
 import "./UI-Design.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import {
+  FaFigma,
+  FaSketch,
+  FaPaintBrush,
+  FaPen,
+  FaSitemap,
+  FaUsers,
+  FaMobileAlt,
+  FaUniversalAccess,
+  FaLayerGroup,
+  FaComments,
+  FaMousePointer,
+  FaCubes,
+} from "react-icons/fa";
 
 const techs = [
-  "Figma",
-  "Adobe XD",
-  "Wireframes",
-  "Prototypes",
-  "Design Systems",
-  "User Research",
-  "UX Audit",
-  "Responsive UI",
+  { name: "Framer", icon: <FaCubes /> },
+  { name: "InVision", icon: <FaMousePointer /> },
+  { name: "UXPin", icon: <FaPen /> },
+  { name: "Zeplin", icon: <FaComments /> },
+  { name: "Abstract", icon: <FaLayerGroup /> },
+  { name: "Figma", icon: <FaFigma /> },
+  { name: "Sketch", icon: <FaSketch /> },
+  { name: "Adobe XD", icon: <FaPaintBrush /> },
 ];
-
 const services = [
-  ["User Research", "We study user behavior, business goals, and product requirements to create clear design direction."],
-  ["Wireframing", "Low and high-fidelity wireframes to structure user flows before final visual design."],
-  ["UI Design", "Modern, clean, and branded interfaces for websites, dashboards, and mobile apps."],
-  ["UX Strategy", "Conversion-focused user journeys designed for clarity, retention, and business growth."],
-  ["Prototyping", "Interactive prototypes to test product ideas before development begins."],
-  ["Design Systems", "Reusable components, typography, colors, and spacing rules for scalable product design."],
+  {
+    title: "User Research",
+    desc: "Persona creation, interviews, and usability testing to understand your audience.",
+    icon: <FaUsers />,
+  },
+  {
+    title: "Information Architecture",
+    desc: "Clear navigation and structure for effortless discovery.",
+    icon: <FaSitemap />,
+  },
+  {
+    title: "Wireframing",
+    desc: "Low-fidelity wireframes to validate ideas quickly.",
+    icon: <FaPen />,
+  },
+  {
+    title: "Visual Design",
+    desc: "High-fidelity mockups and design systems for consistency.",
+    icon: <FaPaintBrush />,
+  },
+  {
+    title: "Prototyping",
+    desc: "Interactive prototypes to test flows and micro-interactions.",
+    icon: <FaMobileAlt />,
+  },
+  {
+    title: "Accessibility",
+    desc: "WCAG-compliant, inclusive design for all users.",
+    icon: <FaUniversalAccess />,
+  },
 ];
 
 const steps = [
-  ["1", "Discovery & Planning", "Goals, roadmap, risks, and sprint plan with clear acceptance criteria."],
-  ["2", "Design & Prototyping", "UX flows, UI system, and interactive prototypes validated early."],
-  ["3", "Engineering & QA", "Agile sprints, code reviews, and automated test coverage practices."],
-  ["4", "Release & Support", "Fastlane CI/CD, store submission, monitoring, and updates."],
+  ["1", "Discovery", "Stakeholder interviews, user research, and competitor analysis."],
+  ["2", "Wireframing", "Low-fidelity wireframes to validate structure and flow."],
+  ["3", "Visual Design", "High-fidelity mockups, design systems, and micro-interactions."],
+  ["4", "Handoff", "Developer-ready assets, specs, and design tokens."],
 ];
 
 export default function UIDesign() {
@@ -37,12 +74,17 @@ export default function UIDesign() {
 
       <main className="mobile-page">
         <section className="mobile-hero">
-          <div className="pill">▯ Elevating Digital Experiences</div>
-          <h1>Building Reliable, Future-Proof <br /> Mobile Solutions</h1>
+          <div className="pill">🛠 Elevating User Experiences</div>
+
+          <h1>
+            Crafting Intelligent <br /> User Experiences
+          </h1>
+
           <p>
-            We craft premium mobile applications and scalable app ecosystems
-            designed for performance, security, and growth.
+            We design beautiful, intuitive interfaces that drive engagement and
+            delight users across all platforms.
           </p>
+
           <div className="hero-actions">
             <a href="/projects">View Our Work</a>
             <a href="/contact">Start a Project</a>
@@ -52,30 +94,35 @@ export default function UIDesign() {
         <section className="tech-strip">
           <div className="tech-track">
             {[...techs, ...techs].map((item, i) => (
-              <span key={i}>{item}</span>
+              <span key={i}>
+                {item.icon}
+                <strong>{item.name}</strong>
+              </span>
             ))}
           </div>
         </section>
 
         <section className="mobile-section">
           <span className="section-kicker">OUR EXPERTISE</span>
-          <h2>Complete Mobile Development Services</h2>
+          <h2>Our Design Services</h2>
           <div className="blue-line"></div>
 
           <div className="services-grid">
             {services.map((item, i) => (
-              <div className="service-card" key={i}>
-                <div className={`circle c${i}`}>{i === 0 ? "☁" : i === 1 ? "✎" : i === 2 ? "</>" : i === 3 ? "⚒" : i === 4 ? "▰" : "☷"}</div>
-                <h3>{item[0]}</h3>
-                <p>{item[1]}</p>
+              <div className="service-card" key={item.title}>
+                <div className={`circle c${i}`}>{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section className="mobile-section automation">
-          <h2>Automation</h2>
-          <p className="sub">A predictable process with clean handoffs, automation, and visibility.</p>
+          <h2 className="white-title">Design Delivery Workflow</h2>
+          <p className="sub">
+            From research to handoff, a seamless process for world-class results.
+          </p>
 
           <div className="steps-grid">
             {steps.map((s) => (
@@ -86,88 +133,15 @@ export default function UIDesign() {
               </div>
             ))}
           </div>
-
-          <div className="automation-grid">
-            <div className="info-box">
-              <h3>Fastlane Deployment Automation</h3>
-              <ul>
-                <li>Automated versioning, build numbers, and changelogs</li>
-                <li>Code signing & certificates managed securely</li>
-                <li>One-click uploads to TestFlight and Google Play Internal Testing</li>
-                <li>Phased rollouts, release tracks, and rollback support</li>
-              </ul>
-            </div>
-
-            <div className="info-box">
-              <h3>CI/CD & Release Governance</h3>
-              <div className="rows">
-                <p><span>Build pipelines</span><b>GitHub Actions / Bitrise / Jenkins</b></p>
-                <p><span>Release controls</span><b>Approvals, tags, and audit logs</b></p>
-                <p><span>Monitoring</span><b>Crashlytics, Sentry, Analytics</b></p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mobile-section publish">
-          <h2>Publishing to App Store & Play Store</h2>
-          <p className="sub">Clear checklists to pass review quickly and confidently.</p>
-
-          <div className="publish-grid">
-            <div className="info-box">
-              <h3> App Store (iOS)</h3>
-              <ul>
-                <li>Bundle ID, provisioning, and App Store Connect setup</li>
-                <li>Compliance: privacy details, tracking prompts, and data use</li>
-                <li>Localized metadata, screenshots, and preview videos</li>
-                <li>TestFlight distribution and phased release</li>
-              </ul>
-            </div>
-
-            <div className="info-box">
-              <h3>▷ Google Play (Android)</h3>
-              <ul>
-                <li>Play Console setup, signing key, and app integrity</li>
-                <li>Data safety form and permission declarations</li>
-                <li>Store listing assets, feature graphics, and localization</li>
-                <li>Tracks for internal, closed, open, and production releases</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className="mobile-section why">
-          <span className="section-kicker purple">Core Advantages</span>
-          <h2>Why Choose Us?</h2>
-          <p className="sub">We deliver more than just code; we deliver value, security, and engagement.</p>
-
-          <div className="why-grid">
-            <div className="why-card">
-              <div className="big-icon yellow">⌁</div>
-              <h3>Improve Stability</h3>
-              <p>Unwavering stability guarantees a crash-free experience. We handle high user loads efficiently without compromising speed.</p>
-              <b>99.9% Uptime Guarantee</b>
-            </div>
-            <div className="why-card">
-              <div className="big-icon red">盾</div>
-              <h3>Resilience</h3>
-              <p>Top-tier security with advanced encryption and multi-factor authentication to protect user-sensitive information.</p>
-              <b className="red-text">Bank-Grade Security</b>
-            </div>
-            <div className="why-card">
-              <div className="big-icon cyan">👥</div>
-              <h3>Socialization</h3>
-              <p>Effortless social integration allows users to log in, share content, and connect, boosting community engagement.</p>
-              <b className="cyan-text">Seamless Integration</b>
-            </div>
-          </div>
         </section>
 
         <section className="mobile-cta">
-          <h2>Ready to Build Your Product?</h2>
-          <p>Let's create a user-friendly and premium digital experience for your business.
-Start UI/UX Project.</p>
-          <a href="/quote">Get a Free Quote</a>
+          <h2>Ready for Premium Design?</h2>
+          <p>
+            Let's create a beautiful, user-centered experience for your next big
+            idea.
+          </p>
+          <a href="/quote">Get a Free Design Audit</a>
         </section>
       </main>
 

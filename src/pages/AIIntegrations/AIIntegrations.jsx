@@ -2,48 +2,100 @@ import React from "react";
 import "./AIIntegrations.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import {
+  FaAws,
+  FaSlack,
+  FaWhatsapp,
+  FaRobot,
+  FaBrain,
+  FaLink,
+  FaCloud,
+  FaUsers,
+  FaSitemap,
+  FaPen,
+  FaPaintBrush,
+  FaMobileAlt,
+  FaUniversalAccess,
+  FaLayerGroup,
+  FaComments,
+  FaMousePointer,
+  FaCubes,
+  FaFigma,
+  FaSketch,
+} from "react-icons/fa";
+
+import { SiZapier } from "react-icons/si";
 
 const techs = [
-  "Android (Kotlin)",
-  "Flutter",
-  "React Native",
-  "SwiftUI",
-  "Firebase",
-  "AWS Amplify",
-  "TestFlight",
+  { name: "WhatsApp API", icon: <FaWhatsapp /> },
+  { name: "LangChain", icon: <FaLink /> },
+  { name: "Zapier", icon: <SiZapier /> },
+  { name: "OpenAI GPT-4", icon: <FaRobot /> },
+  { name: "Azure OpenAI", icon: <FaCloud /> },
+  { name: "Google Gemini", icon: <FaBrain /> },
+  { name: "AWS Bedrock", icon: <FaAws /> },
+  { name: "Slack Bot", icon: <FaSlack /> },
 ];
-
 const services = [
-  ["Strategy & Consultation", "In-depth discovery workshops to define product vision, target users, technical feasibility, and go-to-market strategy."],
-  ["UI/UX Design", "User-centered design process with wireframes, prototypes, and design systems that delight and convert."],
-  ["Native Development", "Expert Swift and Kotlin engineers building high-performance, platform-specific iOS and Android applications."],
-  ["QA & Testing", "Comprehensive test coverage including automated tests, device lab testing, and performance benchmarking."],
-  ["Cross-Platform", "Flutter and React Native solutions for faster time-to-market while maintaining near-native performance."],
-  ["Backend & APIs", "Scalable cloud infrastructure, RESTful APIs, real-time features, and seamless third-party integrations."],
+  {
+    title: "Custom Chatbots",
+    desc: "Conversational AI for websites, apps, and support.",
+    icon: <FaUsers />,
+  },
+  {
+    title: "API Integrations",
+    desc: "Connect ChatGPT to your backend, CRM, or SaaS tools.",
+    icon: <FaSitemap />,
+  },
+  {
+    title: "Automation",
+    desc: "Automate workflows, lead capture, and notifications.",
+    icon: <FaPen />,
+  },
+  {
+    title: "Multilingual",
+    desc: "Serve users in 90+ languages with AI translation.",
+    icon: <FaPaintBrush />,
+  },
+  {
+    title: "Analytics",
+    desc: "Conversation analytics and reporting dashboards.",
+    icon: <FaMobileAlt />,
+  },
+  {
+    title: "Security",
+    desc: "Data privacy, compliance, and secure deployments.",
+    icon: <FaUniversalAccess />,
+  },
 ];
 
 const steps = [
-  ["1", "Discovery & Planning", "Goals, roadmap, risks, and sprint plan with clear acceptance criteria."],
-  ["2", "Design & Prototyping", "UX flows, UI system, and interactive prototypes validated early."],
-  ["3", "Engineering & QA", "Agile sprints, code reviews, and automated test coverage practices."],
-  ["4", "Release & Support", "Fastlane CI/CD, store submission, monitoring, and updates."],
+  ["1", "Discovery", "Requirements, use cases, and API selection."],
+  ["2", "Prototyping", "Rapid prototyping and proof-of-concept builds."],
+  ["3", "Integration", "Secure, scalable integration with your stack."],
+  ["4", "Launch", "Go live, monitor, and optimize for results."],
 ];
 
-export default function AIIntegrations() {
+export default function UIDesign() {
   return (
     <>
       <Navbar />
 
       <main className="mobile-page">
         <section className="mobile-hero">
-          <div className="pill">▯ Elevating Digital Experiences</div>
-          <h1>Building Reliable, Future-Proof <br /> Mobile Solutions</h1>
+          <div className="pill">🛠 Elevating User Experiences</div>
+
+          <h1>
+            Seamless AI <br /> Integration
+          </h1>
+
           <p>
-            We craft premium mobile applications and scalable app ecosystems
-            designed for performance, security, and growth.
+            Supercharge your apps and websites with conversational AI,
+            automation, and smart workflows.
           </p>
+
           <div className="hero-actions">
-            <a href="/projects">View Our Work</a>
+            <a href="/projects">View Services</a>
             <a href="/contact">Start a Project</a>
           </div>
         </section>
@@ -51,30 +103,35 @@ export default function AIIntegrations() {
         <section className="tech-strip">
           <div className="tech-track">
             {[...techs, ...techs].map((item, i) => (
-              <span key={i}>{item}</span>
+              <span key={i}>
+                {item.icon}
+                <strong>{item.name}</strong>
+              </span>
             ))}
           </div>
         </section>
 
         <section className="mobile-section">
           <span className="section-kicker">OUR EXPERTISE</span>
-          <h2>Complete Mobile Development Services</h2>
+          <h2>AI Integration Services</h2>
           <div className="blue-line"></div>
 
           <div className="services-grid">
             {services.map((item, i) => (
-              <div className="service-card" key={i}>
-                <div className={`circle c${i}`}>{i === 0 ? "☁" : i === 1 ? "✎" : i === 2 ? "</>" : i === 3 ? "⚒" : i === 4 ? "▰" : "☷"}</div>
-                <h3>{item[0]}</h3>
-                <p>{item[1]}</p>
+              <div className="service-card" key={item.title}>
+                <div className={`circle c${i}`}>{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section className="mobile-section automation">
-          <h2>Automation</h2>
-          <p className="sub">A predictable process with clean handoffs, automation, and visibility.</p>
+          <h2 className="white-title">Integration Workflow</h2>
+          <p className="sub">
+            From API keys to production, a seamless process for every integration.
+          </p>
 
           <div className="steps-grid">
             {steps.map((s) => (
@@ -85,87 +142,14 @@ export default function AIIntegrations() {
               </div>
             ))}
           </div>
-
-          <div className="automation-grid">
-            <div className="info-box">
-              <h3>Fastlane Deployment Automation</h3>
-              <ul>
-                <li>Automated versioning, build numbers, and changelogs</li>
-                <li>Code signing & certificates managed securely</li>
-                <li>One-click uploads to TestFlight and Google Play Internal Testing</li>
-                <li>Phased rollouts, release tracks, and rollback support</li>
-              </ul>
-            </div>
-
-            <div className="info-box">
-              <h3>CI/CD & Release Governance</h3>
-              <div className="rows">
-                <p><span>Build pipelines</span><b>GitHub Actions / Bitrise / Jenkins</b></p>
-                <p><span>Release controls</span><b>Approvals, tags, and audit logs</b></p>
-                <p><span>Monitoring</span><b>Crashlytics, Sentry, Analytics</b></p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mobile-section publish">
-          <h2>Publishing to App Store & Play Store</h2>
-          <p className="sub">Clear checklists to pass review quickly and confidently.</p>
-
-          <div className="publish-grid">
-            <div className="info-box">
-              <h3> App Store (iOS)</h3>
-              <ul>
-                <li>Bundle ID, provisioning, and App Store Connect setup</li>
-                <li>Compliance: privacy details, tracking prompts, and data use</li>
-                <li>Localized metadata, screenshots, and preview videos</li>
-                <li>TestFlight distribution and phased release</li>
-              </ul>
-            </div>
-
-            <div className="info-box">
-              <h3>▷ Google Play (Android)</h3>
-              <ul>
-                <li>Play Console setup, signing key, and app integrity</li>
-                <li>Data safety form and permission declarations</li>
-                <li>Store listing assets, feature graphics, and localization</li>
-                <li>Tracks for internal, closed, open, and production releases</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className="mobile-section why">
-          <span className="section-kicker purple">Core Advantages</span>
-          <h2>Why Choose Us?</h2>
-          <p className="sub">We deliver more than just code; we deliver value, security, and engagement.</p>
-
-          <div className="why-grid">
-            <div className="why-card">
-              <div className="big-icon yellow">⌁</div>
-              <h3>Improve Stability</h3>
-              <p>Unwavering stability guarantees a crash-free experience. We handle high user loads efficiently without compromising speed.</p>
-              <b>99.9% Uptime Guarantee</b>
-            </div>
-            <div className="why-card">
-              <div className="big-icon red">盾</div>
-              <h3>Resilience</h3>
-              <p>Top-tier security with advanced encryption and multi-factor authentication to protect user-sensitive information.</p>
-              <b className="red-text">Bank-Grade Security</b>
-            </div>
-            <div className="why-card">
-              <div className="big-icon cyan">👥</div>
-              <h3>Socialization</h3>
-              <p>Effortless social integration allows users to log in, share content, and connect, boosting community engagement.</p>
-              <b className="cyan-text">Seamless Integration</b>
-            </div>
-          </div>
         </section>
 
         <section className="mobile-cta">
-          <h2>Ready to Build Your App?</h2>
-          <p>Let's discuss your mobile strategy and bring your vision to life on iOS and Android.</p>
-          <a href="/quote">Get a Free Quote</a>
+          <h2>Ready to Add AI to Your Product?</h2>
+          <p>
+            Let's build smarter, more engaging experiences for your users.
+          </p>
+          <a href="/quote">Get a Free AI Consultation</a>
         </section>
       </main>
 

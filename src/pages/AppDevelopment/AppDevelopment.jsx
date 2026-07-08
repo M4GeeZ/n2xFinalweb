@@ -4,23 +4,23 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 const techs = [
-  "React",
-  "Vue.js",
-  "Angular",
-  "Laravel",
-  "Node.js",
-  "Python",
-  "AWS",
-  "Docker",
+  "React Native",
+  "SwiftUI",
+  "AWS Amplify",
+  "Firebase",
+  "Test Flight",
+  "IOS (Swift)",
+  "Android (Kotlin)",
+  "Flutter",
 ];
 
 const services = [
-  ["Custom Websites", "Unique, branded websites tailored to your business goals."],
-  ["E-Commerce", "Robust online stores with secure payments and inventory."],
-  ["Backend APIs", "Powerful, scalable APIs for any web or mobile app."],
-  ["Cloud Hosting", "Managed cloud deployments for speed and reliability."],
-  ["SEO Optimization", "On-page SEO, analytics, and performance tuning."],
-  ["Security Audits", "Penetration testing and vulnerability assessments."],
+  ["Strategy & Consultation", "In-depth discovery workshops to define product vision, target users, technical feasibility, and go-to-market strategy."],
+  ["UI/UX Design", "User-centered design process with wireframes, prototypes, and design systems that delight and convert."],
+  ["Native Development", "Expert Swift and Kotlin engineers building high-performance, platform-specific iOS and Android applications."],
+  ["QA & Testing", "Comprehensive test coverage including automated tests, device lab testing, and performance benchmarking."],
+  ["Cross-Platform", "Flutter and React Native solutions for faster time-to-market while maintaining near-native performance."],
+  ["Backend & APIs", "Scalable cloud infrastructure, RESTful APIs, real-time features, and seamless third-party integrations."],
 ];
 
 const steps = [
@@ -38,9 +38,9 @@ export default function WebsiteDevelopment() {
       <main className="mobile-page">
         <section className="mobile-hero">
           <div className="pill">▯ Elevating Digital Experiences</div>
-          <h1>Building Reliable, Future-Proof <br /> Website Solutions</h1>
+          <h1>Building Reliable, Future-Proof <br /> Mobile Solutions</h1>
           <p>
-            We build scalable, secure, and lightning-fast websites that drive business growth and user engagement.
+            We craft premium mobile applications and scalable app ecosystems designed for performance, security, and growth.
           </p>
           <div className="hero-actions">
             <a href="/projects">View Our Work</a>
@@ -57,7 +57,7 @@ export default function WebsiteDevelopment() {
         </section>
 
         <section className="mobile-section">
-          <span className="section-kicker">OUR EXPERTISE</span>
+          <span className="section-kicker"> OUR EXPERTISE</span>
           <h2>Complete Mobile Development Services</h2>
           <div className="blue-line"></div>
 

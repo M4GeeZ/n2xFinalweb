@@ -373,3 +373,12 @@
     min-width: unset;
   }
 }
+.tech-track span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-track span svg {
+  font-size: 20px;
+}
