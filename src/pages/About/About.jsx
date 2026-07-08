@@ -3,6 +3,18 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Eye, Users, Target, Sparkles } from "lucide-react";
 
+import CEO from "../../assets/CEO.png";
+
+import Arslan from "../../assets/Arslan.png";
+import Alyana from "../../assets/Alyana.png";
+import Ali from "../../assets/Ali.png";
+import Awais from "../../assets/Awais.jpeg";
+import Azeem from "../../assets/Azeem.jpg";
+import Hooraina from "../../assets/Hooraina.png";
+import Romesaa from "../../assets/Romesaa.png";
+import Raheem from "../../assets/Raham Waseem.jpeg";
+import Zain from "../../assets/zain.jpeg";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./About.css";
@@ -10,10 +22,15 @@ import "./About.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const team = [
-  { name: "Muhammad Arslan", role: "CTO", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=900" },
-  { name: "Alyana Tariq", role: "Lead Mobile App Developer", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900" },
-  { name: "Ali", role: "Project Manager", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900" },
-  { name: "Faiza", role: "Full Stack Development Lead", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=900" },
+  { name: "Muhammad Arslan", role: "CTO", img: Arslan },
+  { name: "Alyana Tariq", role: "Lead Mobile App Developer", img: Alyana },
+  { name: "Ali", role: "Project Manager", img: Ali },
+  { name: "Awais", role: "Full stack developer", img: Awais },
+  { name: "Azeem", role: "Full stack developer", img: Azeem },
+  { name: "Hooraina", role: "ui/ux designer", img: Hooraina },
+  { name: "Romesaa", role: "full stack developer", img: Romesaa },
+  { name: "Raheem Waseem", role: "full stack developer", img: Raheem },
+  { name: "Zain", role: "React native developer", img: Zain },
 ];
 
 export default function About() {
@@ -166,10 +183,7 @@ export default function About() {
 
           <div className="ceo-image-wrap">
             <div className="ceo-ring"></div>
-            <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=900"
-              alt="CEO"
-            />
+           <img src={CEO} alt="CEO" className="ceo-image" />
           </div>
         </section>
 
@@ -194,7 +208,7 @@ export default function About() {
           <h2>
             Schedule your free <span>consultancy</span> today.
           </h2>
-          <a href="/#contact">LET'S TALK</a>
+          <a href="/contact">LET'S TALK</a>
         </section>
       </main>
 
