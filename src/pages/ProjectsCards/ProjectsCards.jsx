@@ -11,7 +11,7 @@ import Eaglechathover from "../../assets/Eaglechathover.png";
 import GMS from "../../assets/GMS.png";
 import LMSAPP from "../../assets/LMSAPP.png";
 import hmb from "../../assets/hmb.png";
-import POS from "../../assets/POS.jpg";
+import pos from "../../assets/pos.jpg";
 import ttb from "../../assets/ttb.png";
 import TMS from "../../assets/TMS.png";
 import PizzaMama from "../../assets/PizzaMama.png";
@@ -41,7 +41,7 @@ const movingCards = [
   { title: "Mindora", img: Mindora },
   { title: "TMS", img: TMS },
   { title: "TrueTrucker", img: ttb },
-  { title: "POS", img: POS },
+  { title: "POS", img: pos },
   { title: "Resturent System", img: hmb },
   { title: "L M S", img: LMSAPP },
   { title: "Garage Management System", img: GMS },
