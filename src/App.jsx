@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import ProjectsCards from "./pages/ProjectsCards/ProjectsCards";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import QuotePage from "./pages/QuotePage/QuotePage";
 
 import HomePage from "./components/HomePage/HomePage";
 import About from "./pages/About/About";
@@ -99,6 +100,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/contact" element={<ContactPage />} />  
+        <Route path="/quote" element={<QuotePage />} />
         <Route path="/services/ai-development" element={<AIDevelopment />} />
         <Route path="/services/ai-integrations" element={<AIIntegrations />} />
         <Route path="/services/digital-marketing" element={<DigitalMarketing />} />

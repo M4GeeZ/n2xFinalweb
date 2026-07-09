@@ -165,7 +165,7 @@ export default function WebsiteDevelopment() {
         <section className="mobile-cta">
           <h2>Ready to Build Your App?</h2>
           <p>Let's discuss your mobile strategy and bring your vision to life on iOS and Android.</p>
-          <a href="/quote">Get a Free Quote</a>
+          <a href="/Quote">Get a Free Quote</a>
         </section>
       </main>
 

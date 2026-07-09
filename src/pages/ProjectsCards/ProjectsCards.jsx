@@ -4,32 +4,47 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./ProjectsCards.css";
+import carshare from "../../assets/carshare.png";
+import HoverCarShare from "../../assets/HoverCarShare.png";
+import EagleChat from "../../assets/EagleChat.png";
+import Eaglechathover from "../../assets/Eaglechathover.png";
+import GMS from "../../assets/GMS.png";
+import LMSAPP from "../../assets/LMSAPP.png";
+import hmb from "../../assets/hmb.png";
+import POS from "../../assets/POS.jpg";
+import ttb from "../../assets/ttb.png";
+import TMS from "../../assets/TMS.png";
+import PizzaMama from "../../assets/PizzaMama.png";
+import Mindora from "../../assets/Mindora.png";
+import Jabulani from "../../assets/Jabulani.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const topCards = [
   {
-    title: "Premium Web Development",
-    desc: "Modern, scalable and high-performance websites for brands.",
-    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200",
-    hoverImg: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200",
+    title: "Carshare",
+    desc: "Smart admin dashboard to manage drivers, routes, bookings, payments, and live ride analytics—all in one place.",
+    img: HoverCarShare,
+    hoverImg: carshare,
   },
   {
-    title: "Mobile App Solutions",
-    desc: "Smooth and professional mobile app interfaces with premium UX.",
-    img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200",
-    hoverImg: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1200",
+    title: "Gaming Arcade - Play & Earn",
+    desc: "An all-in-one gaming platform featuring mini-games, live chat, coin rewards, and a secure digital wallet.",
+    img: Eaglechathover,
+    hoverImg: EagleChat,
   },
 ];
 
 const movingCards = [
-  { title: "UI/UX Design", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=900" },
-  { title: "MERN Stack", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=900" },
-  { title: "React Native", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=900" },
-  { title: "Cloud Deployments", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900" },
-  { title: "API Development", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=900" },
-  { title: "DevOps Workflow", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900" },
-  { title: "Product Design", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900" },
+  { title: "PizzaMama", img: PizzaMama },
+  { title: "Jabulani", img: Jabulani },
+  { title: "Mindora", img: Mindora },
+  { title: "TMS", img: TMS },
+  { title: "TrueTrucker", img: ttb },
+  { title: "POS", img: POS },
+  { title: "Resturent System", img: hmb },
+  { title: "L M S", img: LMSAPP },
+  { title: "Garage Management System", img: GMS },
 ];
 
 export default function ProjectsCards() {
@@ -61,7 +76,7 @@ export default function ProjectsCards() {
               start: "top 85%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
 
@@ -103,7 +118,7 @@ export default function ProjectsCards() {
             duration: 0.4,
             ease: "power2.inOut",
           },
-          index * 0.16
+          index * 0.16,
         );
 
         tl.to(
@@ -115,7 +130,7 @@ export default function ProjectsCards() {
             duration: 0.55,
             ease: "power3.out",
           },
-          index * 0.16 + 0.08
+          index * 0.16 + 0.08,
         );
       });
 
@@ -142,9 +157,7 @@ export default function ProjectsCards() {
           <div className="projects-hero-content">
             <span className="hero-pill">🚀 n2xSystem Project Showcase</span>
 
-            <h1>
-              We Build Digital Products That Look Premium & Perform Fast.
-            </h1>
+            <h1>We Build Digital Products That Look Premium & Perform Fast.</h1>
 
             <p>
               From high-end websites and mobile apps to dashboards, APIs, cloud
@@ -180,7 +193,11 @@ export default function ProjectsCards() {
 
           <div className="top-cards">
             {topCards.map((card, index) => (
-              <div className="premium-card top-card" key={index} data-project-reveal>
+              <div
+                className="premium-card top-card"
+                key={index}
+                data-project-reveal
+              >
                 <div className="card-inner">
                   <img className="base-img" src={card.img} alt={card.title} />
 
@@ -191,10 +208,8 @@ export default function ProjectsCards() {
                   <div className="card-overlay"></div>
 
                   <div className="card-content">
-                    <span>0{index + 1}</span>
                     <h2>{card.title}</h2>
                     <p>{card.desc}</p>
-                    <button>Explore Service ↗</button>
                   </div>
                 </div>
               </div>
@@ -225,13 +240,19 @@ export default function ProjectsCards() {
                 {movingCards.map((card, index) => (
                   <div className="premium-card moving-card" key={index}>
                     <div className="card-inner">
-                      <img className="base-img" src={card.img} alt={card.title} />
+                      <img
+                        className="base-img"
+                        src={card.img}
+                        alt={card.title}
+                      />
                       <div className="card-overlay"></div>
 
                       <div className="card-content small">
-                        <span>0{index + 3}</span>
                         <h2>{card.title}</h2>
-                        <p>Creative, clean and conversion-focused digital solution.</p>
+                        <p>
+                          Creative, clean and conversion-focused digital
+                          solution.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -242,12 +263,19 @@ export default function ProjectsCards() {
                 {movingCards.map((card, index) => (
                   <div className="premium-card moving-card" key={index}>
                     <div className="card-inner">
-                      <img className="base-img" src={card.img} alt={card.title} />
+                      <img
+                        className="base-img"
+                        src={card.img}
+                        alt={card.title}
+                      />
                       <div className="card-overlay"></div>
 
                       <div className="card-content small">
                         <h2>{card.title}</h2>
-                        <p>Creative, clean and conversion-focused digital solution.</p>
+                        <p>
+                          Creative, clean and conversion-focused digital
+                          solution.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -264,7 +292,7 @@ export default function ProjectsCards() {
             Let’s turn your idea into a polished web, mobile or AI-powered
             product with strong UI, smooth animations and scalable engineering.
           </p>
-          <a href="/#contact">Start a Project →</a>
+          <a href="/contact">Start a Project →</a>
         </section>
       </main>
 

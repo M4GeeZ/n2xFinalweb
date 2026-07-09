@@ -19,14 +19,24 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import heroImage from "../assets/hero.png";
 import "./ServicesPage.css";
+
+import heroImage from "../assets/hero.png";
+
+import DigitalMarketingImage from "../assets/DigitalMarketingGrowth.png";
+import WebsiteSEOImage from "../assets/WebsiteSEOImage.png";
+import Mobile from "../assets/Mobile.png";
+import UIUXDesign from "../assets/UIUXDesign.png";
+import GPTLLMIntegrations from "../assets/GPTLLMIntegrations.png";
+import AIML from "../assets/AIML.png";
+
 
 const serviceBlocks = [
   {
     title: "Mobile Apps & Solutions",
     copy: "Native and cross-platform mobile experiences engineered for performance, clean UX, secure APIs, and long-term maintainability.",
     icon: Smartphone,
+    image: Mobile,
     link: "/services/app-development",
     points: ["iOS & Android apps", "React Native architecture", "Booking, delivery & LMS apps", "Store publishing support"],
   },
@@ -34,6 +44,7 @@ const serviceBlocks = [
     title: "UI & UX Design",
     copy: "Research-led, pixel-perfect interfaces and prototypes that reduce friction, improve trust, and convert visitors into customers.",
     icon: Palette,
+    image: UIUXDesign,
     link: "/services/ui-design",
     points: ["Wireframes & prototypes", "Design systems", "Landing page UI", "Mobile app experiences"],
   },
@@ -41,6 +52,7 @@ const serviceBlocks = [
     title: "Website & Web Applications",
     copy: "High-speed websites and scalable web apps built with modern frontend, backend, integrations, and deployment best practices.",
     icon: Code2,
+    image: WebsiteSEOImage,
     link: "/services/website-development",
     points: ["React / Laravel / MERN", "CMS & admin dashboards", "E-commerce platforms", "API integrations"],
   },
@@ -48,20 +60,25 @@ const serviceBlocks = [
     title: "AI Platform Integrations",
     copy: "Practical AI and LLM workflows that automate support, generate content, summarize data, and improve business operations.",
     icon: Bot,
+    image: GPTLLMIntegrations,
     link: "/services/ai-integrations",
     points: ["ChatGPT integrations", "Support bots", "Content automation", "Workflow copilots"],
   },
+
   {
     title: "Digital Marketing & Growth",
     copy: "Conversion-focused SEO, content, analytics, and campaign strategy designed to scale traffic, leads, and brand visibility.",
     icon: LineChart,
+    image: DigitalMarketingImage,
     link: "/services/digital-marketing",
     points: ["SEO optimization", "Paid campaigns", "Social growth", "Analytics tracking"],
   },
+
   {
     title: "AI & ML Development",
     copy: "Production-oriented AI models, prediction pipelines, computer vision, and NLP solutions delivered with reliability in mind.",
     icon: BrainCircuit,
+    image: AIML,
     link: "/services/ai-development",
     points: ["Machine learning models", "Computer vision", "Predictive analytics", "NLP solutions"],
   },
@@ -151,8 +168,14 @@ export default function ServicesPage() {
           <div className="services-orb orb-one" />
           <div className="services-orb orb-two" />
           <div className="services-grid-bg" />
-
           <div className="services-hero-inner">
+            <a
+  href="/N2X.pdf"
+  download="N2X-Portfolio.pdf"
+  className="downloadPortfolioBtn"
+>
+  <span>Download Portfolio</span>
+</a>
             <span className="services-hero-badge"><Sparkles size={16} /> Our Services</span>
             <h1 className="services-hero-title">
               End-to-End Technology <span>Solutions for Your Business.</span>
@@ -177,7 +200,7 @@ export default function ServicesPage() {
             return (
               <article className={`service-showcase ${isReverse ? "reverse" : ""}`} key={service.title}>
                 <div className="showcase-image-wrap">
-                  <img src={heroImage} alt={service.title} />
+                <img src={service.image || heroImage} alt={service.title} />
                   <div className="image-glow" />
                   <div className="floating-label"><Icon size={18} /> {service.title.split(" ")[0]} Solutions</div>
                 </div>

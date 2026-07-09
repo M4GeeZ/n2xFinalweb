@@ -1,0 +1,268 @@
+.quotePage {
+  min-height: 100vh;
+  background: #071120;
+  color: #f8fbff;
+}
+
+.quoteHero {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 7vw 110px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.22), transparent 32%),
+    radial-gradient(circle at 85% 10%, rgba(96, 165, 250, 0.18), transparent 28%),
+    linear-gradient(135deg, #071120 0%, #0d1b2f 55%, #101d31 100%);
+}
+
+.quoteHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
+  background-size: 54px 54px;
+  opacity: 0.32;
+}
+
+.quoteOrb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+.quoteOrbOne {
+  width: 280px;
+  height: 280px;
+  background: rgba(37, 99, 235, 0.35);
+  left: -80px;
+  top: 120px;
+}
+
+.quoteOrbTwo {
+  width: 340px;
+  height: 340px;
+  background: rgba(14, 165, 233, 0.22);
+  right: -120px;
+  bottom: 60px;
+}
+
+.quoteHeroInner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.9fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.quoteBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.quoteLeft h1 {
+  font-size: clamp(3.4rem, 6vw, 6.8rem);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin: 0;
+}
+
+.quoteLeft h1 span {
+  display: block;
+  background: linear-gradient(135deg, #93c5fd, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.quoteLeft p {
+  margin-top: 28px;
+  max-width: 620px;
+  color: #a9bdd8;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.quoteFeatures {
+  margin-top: 36px;
+  display: grid;
+  gap: 18px;
+}
+
+.quoteFeatures div {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.quoteFeatures svg {
+  width: 52px;
+  height: 52px;
+  padding: 14px;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.16);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 16px;
+}
+
+.quoteFeatures span {
+  color: #9fb5d2;
+  line-height: 1.5;
+}
+
+.quoteFeatures b {
+  display: block;
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.quoteForm {
+  padding: 46px;
+  border-radius: 34px;
+  background:
+    linear-gradient(rgba(17, 29, 48, 0.92), rgba(17, 29, 48, 0.92)) padding-box,
+    linear-gradient(135deg, rgba(96, 165, 250, 0.5), transparent, rgba(37, 99, 235, 0.45)) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.36);
+}
+
+.quoteFormHead {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.quoteFormHead span {
+  color: #60a5fa;
+  font-weight: 900;
+}
+
+.quoteFormHead h2 {
+  font-size: 2.4rem;
+  margin: 10px 0 8px;
+  letter-spacing: -1px;
+}
+
+.quoteFormHead p {
+  color: #9fb5d2;
+}
+
+.quoteGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.quoteForm input,
+.quoteForm select,
+.quoteForm textarea {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(8, 16, 30, 0.52);
+  color: #f8fbff;
+  padding: 18px 20px;
+  border-radius: 18px;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.25s ease;
+}
+
+.quoteForm input::placeholder,
+.quoteForm textarea::placeholder {
+  color: #74839a;
+}
+
+.quoteForm input:focus,
+.quoteForm select:focus,
+.quoteForm textarea:focus {
+  border-color: rgba(96, 165, 250, 0.75);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.13);
+}
+
+.quoteForm textarea {
+  height: 150px;
+  resize: none;
+  margin-top: 18px;
+}
+
+.quoteForm button {
+  margin-top: 24px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  padding: 17px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  box-shadow: 0 20px 42px rgba(37, 99, 235, 0.38);
+  transition: 0.28s ease;
+}
+
+.quoteForm button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px rgba(37, 99, 235, 0.55);
+}
+
+.quoteTrust {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.quoteTrust span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #8fa2bd;
+  font-size: 0.9rem;
+}
+
+.quoteTrust svg {
+  color: #10b981;
+}
+
+@media (max-width: 1000px) {
+  .quoteHeroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .quoteLeft h1 {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 650px) {
+  .quoteHero {
+    padding: 120px 6vw 80px;
+  }
+
+  .quoteGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quoteForm {
+    padding: 30px 22px;
+    border-radius: 26px;
+  }
+
+  .quoteLeft h1 {
+    font-size: 3rem;
+    letter-spacing: -1.5px;
+  }
+}

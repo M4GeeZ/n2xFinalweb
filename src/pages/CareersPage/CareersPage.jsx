@@ -259,7 +259,7 @@ export default function Careers() {
             can grow with our team.
           </p>
 
-          <a href="/#contact">
+          <a href="/contact">
             Get in Touch <ArrowRight size={18} />
           </a>
         </section>

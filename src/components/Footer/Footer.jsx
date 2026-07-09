@@ -33,10 +33,17 @@ export default function Footer() {
         <div className="footerCol">
           <h3>Contacts</h3>
           <p className="footerEmail">
-            <strong>Email:</strong>
-            <br />
-            info@n2xsystem.com
-          </p>
+  <strong>Email:</strong>
+  <br />
+  <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@n2xsystem.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="footerEmailLink"
+>
+  info@n2xsystem.com
+</a>
+</p>
 
           <div className="footerSocials">
             <a href="#" aria-label="Instagram">

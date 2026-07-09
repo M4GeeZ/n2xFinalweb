@@ -73,7 +73,7 @@ export default function Navbar() {
           Contact
         </Link>
 
-        <Link className="quote" to="/contact" onClick={closeMenu}>
+        <Link className="quote" to="/Quote" onClick={closeMenu}>
           Get a Quote
         </Link>
       </nav>

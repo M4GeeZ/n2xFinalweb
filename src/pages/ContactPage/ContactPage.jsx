@@ -13,6 +13,9 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+
 import {
   FaInstagram,
   FaFacebookF,
@@ -107,28 +110,7 @@ export default function ContactPage() {
 
   return (
     <main className="contact-page" ref={rootRef}>
-      <nav className="contact-nav">
-        <a className="brand" href="/">
-          <span className="brand-mark">N</span>
-          <span>
-            n2x<span>System</span>
-          </span>
-        </a>
-        <div className="nav-links">
-          <a href="/">Home</a>
-          <a href="/services">Services</a>
-          <a href="/projects">Projects</a>
-          <a href="/about">About</a>
-          <a href="/careers">Careers</a>
-          <a className="active" href="/contact">
-            Contact
-          </a>
-        </div>
-        <a className="quote-btn" href="/contact">
-          Get a Quote
-        </a>
-      </nav>
-
+      <Navbar />
       <section className="contact-hero">
         <div className="hero-glow hero-glow-a" />
         <div className="hero-glow hero-glow-b" />
@@ -298,67 +280,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <footer className="contact-footer">
-        <div className="footer-top">
-          <div className="footer-col">
-            <a className="brand footer-brand" href="/">
-              <span className="brand-mark">N</span>
-              <span>
-                n2x<span>System</span>
-              </span>
-            </a>
-            <p>
-              Innovating the future with AI & Agentic Systems. We build
-              scalable, modern, and intelligent software solutions for
-              businesses worldwide.
-            </p>
-          </div>
-          <div className="footer-col">
-            <h4>Services</h4>
-            {services.map((s) => (
-              <a href="/services" key={s}>
-                {s}
-              </a>
-            ))}
-          </div>
-          <div className="footer-col">
-            <h4>Contacts</h4>
-            <b>Email:</b>
-            <p>info@n2xsystem.com</p>
-           <div className="socials">
-  <a href="#"><FaInstagram /></a>
-  <a href="#"><FaLinkedinIn /></a>
-  <a href="#"><FaFacebookF /></a>
-</div>
-          </div>
-          <div className="footer-col">
-            <h4>Address</h4>
-            <b>LAHORE</b>
-            <p>
-              Plot C 12, Street 195, Sector P,
-              <br />
-              Dha Phase 1, Lahore, 54000 • 6.1,
-              <br />
-              Pakistan
-            </p>
-            <b>LONDON</b>
-            <p>
-              90-92 Angel Road,
-              <br />
-              London SW9 7HP,
-              <br />
-              United Kingdom
-            </p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© 2026 n2x System. All rights reserved.</p>
-          <div>
-            <a>Privacy Policy</a>
-            <a>Terms of Service</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
