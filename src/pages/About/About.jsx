@@ -14,7 +14,7 @@ import Hooraina from "../../assets/Hooraina.png";
 import Romesaa from "../../assets/Romesaa.png";
 import Raheem from "../../assets/RahamWaseem.jpeg";
 import Faizan from "../../assets/Faizan.jpeg";
-import HannanMalik from "../../assets/HannanMalik.png";
+import Hannan from "../../assets/Hannan.png";
 import Zain from "../../assets/zain.jpeg";
 
 import Navbar from "../../components/Navbar/Navbar";
@@ -34,7 +34,7 @@ const team = [
   { name: "Raheem Waseem", role: "full stack developer", img: Raheem },
   { name: "Zain", role: "React native developer", img: Zain },
   { name: "Faizan", role: "React native developer", img: Faizan },
-  { name: "Hannan Malik", role: "Full stack developer", img: HannanMalik },
+  { name: "Hannan Malik", role: "Full stack developer", img: Hannan },
 ];
 
 export default function About() {
